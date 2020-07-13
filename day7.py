@@ -1,3 +1,18 @@
+'''Sample Input
+
+2
+Hacker
+Rank
+
+
+Sample Output
+
+Hce akr
+Rn ak
+
+'''
+
+
 #!/bin/python3
 
 import math
