@@ -1,3 +1,15 @@
+'''Sample Input
+
+5
+
+
+Sample Output
+
+120
+
+'''
+
+
 #!/bin/python3
 
 import math
