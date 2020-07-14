@@ -1,45 +1,62 @@
 '''
 Sample Input
 
-The following input from stdin is handled by the locked stub code in your editor:
-
-The Alchemist
-Paulo Coelho
-248
+Heraldo Memelli 8135627
+2
+100 80
 
 
 Sample Output
 
-The following output is printed by your display() method:
+ Name: Memelli, Heraldo
+ ID: 8135627
+ Grade: O
 
-Title: The Alchemist
-Author: Paulo Coelho
-Price: 248
 '''
 
 
+class Person:
+	def __init__(self, firstName, lastName, idNumber):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.idNumber = idNumber
+	def printPerson(self):
+		print("Name:", self.lastName + ",", self.firstName)
+		print("ID:", self.idNumber)
 
-from abc import ABCMeta, abstractmethod
-class Book(object, metaclass=ABCMeta):
-    def __init__(self,title,author):
-        self.title=title
-        self.author=author   
-    @abstractmethod
-    def display(): pass
+class Student(Person):
+    #   Class Constructor
+    #   
+    #   Parameters:
+    #   firstName - A string denoting the Person's first name.
+    #   lastName - A string denoting the Person's last name.
+    #   id - An integer denoting the Person's ID number.
+    #   scores - An array of integers denoting the Person's test scores.
+    #
+    # Write your constructor here
+    def __init__(self, firstName, lastName, idNumber, scores):
+        Person.__init__(self,firstName, lastName, idNumber)
+        self.scores = scores
 
-#Write MyBook class
-class MyBook(Book):
-    def __init__(self,title, author, price):
-        Book.__init__(self, title, author)
-        self.price = price
+    #   Function Name: calculate
+    #   Return: A character denoting the grade.
+    #
+    # Write your function here
 
-    def display(self):
-        print("Title:", self.title)
-        print("Author:", self.author)
-        print("Price:", self.price)
+    def calculate(self):
+        average = sum(self.scores)
+        average = average / len(self.scores)
 
-title=input()
-author=input()
-price=int(input())
-new_novel=MyBook(title,author,price)
-new_novel.disp
+        if average <= 100 and average >= 90:
+            return 'O'
+        elif average < 90 and average >= 80:
+            return 'E'
+        elif average < 80 and average >= 70:
+            return 'A'
+        elif average < 70 and average >= 55:
+            return 'P'
+        elif average < 55 and average >= 40:
+            return 'D'
+        elif average < 40:
+            return 'T'
+line = input().split()
