@@ -1,3 +1,19 @@
+'''Sample Input 0
+
+3
+
+Sample Output 0
+
+Weird
+
+Sample Input 1
+
+24
+
+Sample Output 1
+
+Not Weird'''
+
 #!/bin/python3
 
 import math
